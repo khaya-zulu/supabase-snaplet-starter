@@ -1,7 +1,8 @@
 <a href="https://www.snaplet.dev/">
-  <img width="935" alt="Next.js 13 and app template Router-ready Supabase starter kit." src="https://github.com/khaya-zulu/supabase-snaplet-starter/assets/39437696/5740061e-c3f5-42f4-968a-f49e3a45663b">
+  <img width="1036" alt="Next.js 13 and app template Router-ready Supabase starter kit." src="https://github.com/khaya-zulu/supabase-snaplet-starter/assets/39437696/05648648-9e84-4893-9571-062d695c575a">
   <h1 align="center">Supabase + Snaplet starter kit</h1>
 </a>
+
 
 <p align="center">
   This starter is a clone of NextJS and Supabase <a href="https://vercel.com/templates/next.js/supabase">starter</a>, showing how you can use Snaplet to seed your Supabase local development stack.
