@@ -75,7 +75,7 @@ export default async function Index() {
             <strong>Supabase</strong> and <strong>Next.js</strong>{" "}
             <img
               src="arrow.svg"
-              className="absolute -bottom-10 right-5 -rotate-[50deg]"
+              className="absolute -bottom-10 right-8 -rotate-[65deg]"
             />
             <h3 className="absolute -bottom-4 rotate-12 -right-32 text-base">
               "Seeded with{" "}
