@@ -37,18 +37,53 @@ If you wish to just develop locally and not deploy to Vercel, [follow the steps 
 
 ## Clone and run locally
 
-Check out this guide we wrote on how to clone the start and get a Snaplet config inside your project.
+1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+
+2. Create a Next.js app using the Supabase Starter template npx command
+
+   ```bash
+   npx create-next-app -e with-supabase
+   ```
+
+3. Use `cd` to change into the app's directory
+
+   ```bash
+   cd name-of-new-app
+   ```
+
+4. Link your project
+
+   ```bash
+   supabase link --project-ref= # Project Settings > Reference ID
+   ```
+
+5. Start your local stack
+
+   ```bash
+   supabase start
+   ```
+
+6. Check out this guide we wrote on how to clone the start and get a Snaplet config inside your project.
+
+7. Rename `.env.local.example` to `.env.local` and update the following:
+
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
+   ```
+
+   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
+
+8. Run the app.
+
+   ```
+   npm run dev
+   ```
 
 ## How to use
 
-1. Start the project
-
-```
-npm run dev
-```
-
-2. Navigate to the root path (`/`) and log in.
-3. Once you have completed the guide you can view the generated `todos` at the `/todos` path.
+- Navigate to the root path (`/`) and log in.
+- Once you have completed the guide you can view the generated `todos` at the `/todos` path.
 
 ## Feedback and issues
 
