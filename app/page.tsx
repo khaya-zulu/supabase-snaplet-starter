@@ -77,11 +77,11 @@ export default async function Index() {
               src="arrow.svg"
               className="absolute -bottom-10 right-5 -rotate-[50deg]"
             />
-            <h3 className="absolute -bottom-4 rotate-3 -right-32 text-base">
+            <h3 className="absolute -bottom-4 rotate-12 -right-32 text-base">
               "Seeded with{" "}
               <a
                 href="https://www.snaplet.dev/"
-                className="hover:underline font-bold"
+                className="underline font-bold"
                 target="_blank"
                 rel="noreferrer"
               >

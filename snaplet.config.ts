@@ -29,7 +29,7 @@ export default defineConfig({
   transform: {
     auth: {
       users({ row }) {
-        if (row.role === "<-- email -->") {
+        if (row.role === "<email over here>") {
           return row;
         }
 
