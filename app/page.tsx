@@ -4,6 +4,7 @@ import Link from "next/link";
 import LogoutButton from "../components/LogoutButton";
 import SupabaseLogo from "../components/SupabaseLogo";
 import NextJsLogo from "../components/NextJsLogo";
+import { SnapletLogo } from "../components/SnapletLogo";
 import DeployButton from "../components/DeployButton";
 
 export const dynamic = "force-dynamic";
@@ -11,23 +12,20 @@ export const dynamic = "force-dynamic";
 const resources = [
   {
     title: "Create a Snaplet account",
-    subtitle:
-      "This free course by Jon Meyers, shows you how to configure Supabase Auth to use cookies, and steps through some common patterns.",
-    url: "https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF",
+    subtitle: "",
+    url: "",
     icon: "M7 4V20M17 4V20M3 8H7M17 8H21M3 12H21M3 16H7M17 16H21M4 20H20C20.5523 20 21 19.5523 21 19V5C21 4.44772 20.5523 4 20 4H4C3.44772 4 3 4.44772 3 5V19C3 19.5523 3.44772 20 4 20Z",
   },
   {
     title: "Restore to local development supabase stack",
-    subtitle:
-      "Want to see a code example containing some common patterns with Next.js and Supabase? Check out this repo!",
-    url: "https://github.com/supabase/supabase/tree/master/examples/auth/nextjs",
+    subtitle: "",
+    url: "",
     icon: "M10 20L14 4M18 8L22 12L18 16M6 16L2 12L6 8",
   },
   {
     title: "Seed a local development supabase stack",
-    subtitle:
-      "This template has configured Supabase Auth to use cookies for you, but the docs are a great place to learn more.",
-    url: "https://supabase.com/docs/guides/auth/auth-helpers/nextjs",
+    subtitle: "",
+    url: "",
     icon: "M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528",
   },
 ];
@@ -68,19 +66,39 @@ export default async function Index() {
             </Link>
             <span className="border-l rotate-45 h-6" />
             <NextJsLogo />
+            <span className="border-l rotate-45 h-6" />
+            <SnapletLogo />
           </div>
           <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-          <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center my-12">
+          <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center my-12 relative">
             The fastest way to start building apps with{" "}
-            <strong>Supabase</strong> and <strong>Next.js</strong> and{" "}
-            <strong>Snaplet</strong>
+            <strong>Supabase</strong> and <strong>Next.js</strong>{" "}
+            <img
+              src="arrow.svg"
+              className="absolute -bottom-10 right-5 -rotate-[50deg]"
+            />
+            <h3 className="absolute -bottom-4 rotate-3 -right-32 text-base">
+              "Seeded with{" "}
+              <a
+                href="https://www.snaplet.dev/"
+                className="hover:underline font-bold"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Snaplet
+              </a>
+              "
+            </h3>
           </p>
-          <Link
-            href="/todos"
-            className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background"
-          >
-            View todos
-          </Link>
+
+          {user ? (
+            <Link
+              href="/todos"
+              className="bg-foreground py-3 px-6 rounded-lg font-mono text-sm text-background"
+            >
+              View todos
+            </Link>
+          ) : null}
         </div>
 
         <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
