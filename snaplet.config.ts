@@ -9,22 +9,13 @@ export default defineConfig({
     plan({ snaplet }) {
       return snaplet.todos({
         count: 20,
-        // data: {
-        //   users: {
-        //     data: {
-        //       email: ({ seed }) =>
-        //         copycat.email(seed, {
-        //           domain: "gmail.com",
-        //         }),
-        //     },
-        //   },
-        // },
       });
     },
   },
   select: {
-    storage: false,
-    supabase_functions: false,
+    $default: false,
+    auth: true,
+    public: true,
   },
   transform: {
     auth: {
