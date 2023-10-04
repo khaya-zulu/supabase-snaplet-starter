@@ -6,10 +6,14 @@ import { defineConfig } from "snaplet";
 copycat.setHashKey("E5SCm6xZkiclk63r");
 export default defineConfig({
   generate: {
-    plan({ snaplet }) {
-      return snaplet.todos({
-        count: 20,
-      });
+    plan({ snaplet, pipe }) {
+      return pipe(
+        snaplet.users({ count: 10 }),
+        snaplet.todos({ count: 20 }, { autoConnect: true })
+      );
+      // return snaplet.todos({
+      //   count: 20,
+      // });
     },
   },
   select: {
@@ -32,23 +36,6 @@ export default defineConfig({
             limit: 255,
           }),
           phone: copycat.phoneNumber(row.phone),
-        };
-      },
-    },
-    pgsodium: {
-      key({ row }) {
-        return {
-          name: copycat.fullName(row.name),
-          user_data: copycat.username(row.user_data),
-        };
-      },
-    },
-    vault: {
-      secrets({ row }) {
-        return {
-          name: copycat.fullName(row.name),
-          secret: copycat.streetAddress(row.secret),
-          nonce: copycat.hex(row.nonce),
         };
       },
     },
