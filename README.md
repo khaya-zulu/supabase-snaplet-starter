@@ -11,14 +11,14 @@
   <a href="#features"><strong>Features</strong></a> ·
   <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
   <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#how-to-use"><strong>How to use</strong></a> ·
+  <a href="#how-to-use"><strong>How to use / Docs</strong></a> ·
   <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
 </p>
 <br/>
 
 ## Features
 
-On top of everything included in the [starter](https://vercel.com/templates/next.js/supabase).
+Including all the features from the original [starter](https://vercel.com/templates/next.js/supabase):
 
 - Use the [generate command](https://docs.snaplet.dev/references/data-operations/generate/) to create 20 todo items.
 - A base config for transformations (excluding `storage` & `supabase_functions` schemas)
@@ -81,6 +81,8 @@ If you wish to just develop locally and not deploy to Vercel, [follow the steps 
    ```
 
 ## How to use
+
+This is the project used in our [Generate data for your Supabase local development stack](https://docs.snaplet.dev/recipes/supabase#generate-data-for-your-supabase-local-development-stack) guide.
 
 - Navigate to the root path (`/`) and log in.
 - Once you have completed the guide you can view the generated `todos` at the `/todos` path.
