@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db-reset": "snaplet generate --sql > supabase/seed.sql && supabase db reset"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "latest",

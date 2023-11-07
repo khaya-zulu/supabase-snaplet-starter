@@ -6,11 +6,20 @@ import { defineConfig } from "snaplet";
 copycat.setHashKey("E5SCm6xZkiclk63r");
 export default defineConfig({
   generate: {
-    plan({ snaplet, pipe }) {
-      return pipe(
-        snaplet.users({ count: 10 }),
-        snaplet.todos({ count: 20 }, { autoConnect: true })
-      );
+    run: async (snaplet) => {
+      await snaplet.$pipe([
+        // create 10 users
+        snaplet.users((x) =>
+          x(10, (index) => {
+            return {
+              // all the users have `acme.org` as their email domain
+              email: `user${index}@acme.org`,
+            };
+          })
+        ),
+        // create 20 todos, connect them to one of the users
+        snaplet.todos((x) => x(20), { autoConnect: true }),
+      ]);
     },
   },
   select: {
